@@ -559,7 +559,7 @@ h3 {
 }
 
 .form__input-error-active {
-  margin-bottom:10px;
+  margin-bottom: 10px;
   display: block;
 }
 
@@ -579,7 +579,6 @@ h3 {
   position: relative;
   margin: 0 auto;
   width: 30rem;
-
 }
 
 .form__validation-state {
@@ -596,8 +595,12 @@ h3 {
   opacity: 1;
 }
 .form__group-incorrect .form__validation-state {
-  color: #bb2929;
+  color: var(--color-accent);
   opacity: 1;
+}
+
+.form__group-incorrect .form__input {
+  border: 3px solid var(--color-accent);
 }
 
 @media screen and (min-width: 1024px) {

@@ -3,8 +3,9 @@ var p = {
     btnToggler: document.querySelector('.navbar__toggler'),
     navbar: document.querySelector('.navbar'),
     btnUp: document.getElementById("btn-up"),
+    cardsContainer: document.getElementById('cards-container'),
+    form: document.getElementById('contact-form'),
     fields: [],
-
     expressions: {
         name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
         lastname: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
@@ -18,6 +19,9 @@ var m = {
     startApp: () => {
         m.collapseMenu(p.btnToggler, p.navbar);
         m.scroll();
+        m.readFields();
+        document.getElementById("btn-up").addEventListener("click", m.scrollUp);
+
     },
 
     collapseMenu: (element, target) => {
@@ -44,8 +48,6 @@ var m = {
             }
         }
     },
-
-
 
     validateField(expresion, input, field) {
 
@@ -87,27 +89,32 @@ var m = {
 
         switch (e.target.id) {
             case 'name':
-                m.validateField(p.expressions.name, e.target, 'name');
+                m.validateField(p.expressions.name, e.target, e.target.id);
                 break;
             case 'lastname':
-                m.validateField(p.expressions.lastname, e.target, 'lastname');
+                m.validateField(p.expressions.lastname, e.target, e.target.id);
                 break;
             case 'email':
-                m.validateField(p.expressions.email, e.target, 'email');
+                m.validateField(p.expressions.email, e.target, e.target.id);
                 break;
             case 'phone':
-                m.validateField(p.expressions.phone, e.target, 'phone');
+                m.validateField(p.expressions.phone, e.target, e.target.id);
                 break;
         }
     },
 
     validateForm() {
 
+        let gender = document.contactForm.gender.value;
 
         if (Object.keys(p.fields).length == 4) {
-            if ((p.fields.name && p.fields.lastname) && p.fields.email && p.fields.phone) {
-                setTimeout(() => { window.location.reload(); }, 1000)
+            if (p.fields.name && p.fields.lastname && p.fields.email && p.fields.phone && gender) {
+                // setTimeout(() => { window.location.reload(); }, 1000)
                 // window.scrollTo(0, 0);
+                m.getInputs();
+                m.addCard();
+                m.resetFields();
+                m.addFunctionRemoveCard();
                 alert("Card added successfully");
                 return true;
             } else {
@@ -118,21 +125,84 @@ var m = {
             alert("The card could not be added");
             return false;
         }
+    },
+
+    readFields() {
+        let inputs = document.querySelectorAll('.form__input');
+
+        inputs.forEach(input => {
+            input.addEventListener('keyup', m.validateFields);
+            input.addEventListener('blur', m.validateFields);
+        });
+    },
+
+    resetFields() {
+
+        let formInputsGroup = document.querySelectorAll('.form__group-input');
+
+        formInputsGroup.forEach((group) => {
+            group.classList.remove('form__group-incorrect');
+            group.classList.remove('form__group-correct');
+        })
+
+        p.form.reset();
+
+    },
+
+    getInputs() {
+        contact.name = document.getElementById('name').value;
+        contact.lastname = document.getElementById('lastname').value;
+        contact.email = document.getElementById('email').value;
+        contact.phone = document.getElementById('phone').value;
+        contact.gender = document.contactForm.gender.value;
+        contact.id = Math.floor(Math.random() * (10000 + 1));
+
+        if (contact.gender === 'female') {
+            contact.image = './images/icon-female.svg';
+        } else {
+            contact.image = './images/icon-male.svg';
+        }
+
+
+    },
+
+    addCard() {
+        p.cardsContainer.innerHTML += `<div id="${contact.id}" class="card grid grid--1x2" data-aos="zoom-in">
+        <div class="card__image">
+            <img src="${contact.image}" alt="Icon male">
+        </div>
+        <div class="card__body">
+            <h3>${contact.name} ${contact.lastname}</h3>
+            <p>${contact.email}</p>
+            <p>${contact.phone}</p>
+            <button value="${contact.id}" type="button" href="#" class="btn btn--large btn--accent">Remove card</button>
+        </div>
+    </div>`
+    },
+
+    addFunctionRemoveCard() {
+        let btnRemove = document.querySelectorAll('.card .btn');
+        btnRemove.forEach((buttonRemove) => {
+            buttonRemove.addEventListener('click', (e) => {
+                let idRemove = e.target.value;
+                elementRemove = document.getElementById(`${Number(idRemove)}`);
+                elementRemove.remove();
+            })
+        })
     }
+}
 
-
-
-
+var contact = {
+    name: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    gender: "",
+    image: "",
+    id: ""
 }
 
 m.startApp();
 window.onscroll = m.scroll;
 
-document.getElementById("btn-up").addEventListener("click", m.scrollUp);
 
-var inputs = document.querySelectorAll('.form__input');
-
-inputs.forEach(input => {
-    input.addEventListener('keyup', m.validateFields);
-    input.addEventListener('blur', m.validateFields);
-});
