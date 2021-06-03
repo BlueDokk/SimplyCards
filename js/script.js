@@ -5,6 +5,7 @@ var p = {
     btnUp: document.getElementById("btn-up"),
     cardsContainer: document.getElementById('cards-container'),
     form: document.getElementById('contact-form'),
+    myCardsSection: document.getElementById('my-cards'),
     fields: [],
     expressions: {
         name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
@@ -109,12 +110,11 @@ var m = {
 
         if (Object.keys(p.fields).length == 4) {
             if (p.fields.name && p.fields.lastname && p.fields.email && p.fields.phone && gender) {
-                // setTimeout(() => { window.location.reload(); }, 1000)
-                // window.scrollTo(0, 0);
                 m.getInputs();
                 m.addCard();
                 m.resetFields();
                 m.addFunctionRemoveCard();
+                p.myCardsSection.scrollIntoView();
                 alert("Card added successfully");
                 return true;
             } else {
@@ -173,8 +173,8 @@ var m = {
         </div>
         <div class="card__body">
             <h3>${contact.name} ${contact.lastname}</h3>
-            <p>${contact.email}</p>
-            <p>${contact.phone}</p>
+            <p>Email:${contact.email}</p>
+            <p>Phone: ${contact.phone}</p>
             <button value="${contact.id}" type="button" href="#" class="btn btn--large btn--accent">Remove card</button>
         </div>
     </div>`

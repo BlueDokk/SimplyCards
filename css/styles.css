@@ -640,7 +640,8 @@ h3 {
 }
 
 .card__body p {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
 }
 
 .card__body h3 {
