@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplyCards</title>
+
+    <meta name="author" content="Javier Velasquez">
+    <meta name="description" content="Website of SimplyCards project">
+    <meta property="og:title" content="SimplyCards">
+    <meta property="og:description" content="Website of SimplyCards project">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="/normalize.900e4a65.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.d79e11a3.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/all.min.5a8b4c26.css">
+    <link rel="stylesheet" href="/styles.727d583d.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar__brand" href="/">
+                <picture>
+                    <source type="image/webp" srcset="/Logo.3cfec0b6.webp 1x,/Logo@2x.a9725390.webp 2x">
+                    <source type="image/png" srcset="/Logo.531e5c64.png 1x,/Logo@2x.ea6b721b.png 2x">
+                    <img src="/logo.531e5c64.png" alt="SimplyCards Logo">
+                </picture>
+            </a>
+            <div class="icon navbar__toggler">
+                <img src="/bars-solid.3a439de1.svg" alt="" class="">
+            </div>
+            <ul class="list navbar__list collapsible__content">
+                <li class="navbar__item"><a href="#">Home</a></li>
+                <li class="navbar__item"><a href="#">Services</a></li>
+                <li class="navbar__item"><a href="#">About us</a></li>
+                <li class="navbar__item"><a href="#">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="block--fluid banner">
+        <header>
+            <p class="animate__animated animate__lightSpeedInRight banner__header text--absolute text--white">Welcome
+            </p>
+            <hr class="animate__animated animate__lightSpeedInRight line banner__line text--white">
+            <h1 class="animate__animated animate__flip banner__title text--absolute text--white">MANAGE <br>CONTACTS
+            </h1>
+            <p class="animate__animated animate__lightSpeedInLeft banner__subtitle text--absolute text--white">ON MOBILE
+                AND WEB</p>
+        </header>
+
+        <picture>
+            <source type="image/webp" srcset="/banner.06bf865a.webp 1x">
+            <img src="/banner.3c3dd8f8.jpg" alt="banner image">
+        </picture>
+
+    </section>
+    <section>
+        <a href="#" class="btn btn--absolute btn--small btn--primary">Get Started</a>
+    </section>
+
+    <section class="block">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--primary text--center">What is it?</h2>
+            <hr data-aos="zoom-in" class="line line--title line--primary">
+        </header>
+
+        <div class="grid grid--1x2">
+
+            <p data-aos="fade-right" class="block__text text--white text--center">Lorem Ipsum es simplemente el
+                texto de relleno de las imprentas
+                y archivos de texto. Lorem Ipsum
+                ha sido el texto de relleno
+                estándar de las industrias desde.
+                Lorem Ipsum es simplemente el
+                texto de relleno de las imprentas
+                y archivos de texto. Lorem Ipsum
+                ha sido el texto de relleno
+                estándar de las industrias desde</p>
+
+            <picture data-aos="fade-left">
+                <source type="image/webp" srcset="/contacts.9ed93c6b.webp 1x,/contacts@2x.da11c9ee.webp 2x">
+                <source type="image/png" srcset="/contacts.ae989a5b.png 1x,/contacts@2x.eac350df.png 2x">
+                <img class="block__image" src="/contacts.ae989a5b.png" alt="SimplyCards lodo">
+            </picture>
+
+        </div>
+
+    </section>
+
+    <section class="block block--skewed">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--dark text--center">ADD<br> CONTACTS</h2>
+            <hr data-aos="zoom-in" class="line line--title line--dark">
+        </header>
+
+        <div class="grid grid--1x2">
+            <form id="contact-form" data-aos="fade-right" class="form" action="" name="contactForm">
+                <p class="block__text text--center">Contact information</p>
+                <div id="group__name" class="form__group-input">
+                    <input id="name" class="form__input" type="text" placeholder="Name" name="name" required="">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-name">
+                    <p class="form__input-error">The name can only contain alphabetic characters.</p>
+                </div>
+                <div id="group__lastname" class="form__group-input">
+                    <input id="lastname" class="form__input" type="text" placeholder="Lastame" name="lastname" required="">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-lastname" "="">
+                    <p class=" form__input-error">The lastname can only contain alphabetic characters.</p>
+                </div>
+                <div id="group__email" class="form__group-input">
+                    <input id="email" class="form__input" type="email" placeholder="Email" name="email" required="">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-email">
+                    <p class="form__input-error">The email address is not valid.</p>
+                </div>
+                <div id="group__phone" class="form__group-input">
+                    <input id="phone" class="form__input" type="text" placeholder="Cell phone number" name="phone" required="">
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-phone">
+                    <p class="form__input-error">The cell phone number is not valid.</p>
+                </div>
+                <div class="form__group text--center">
+                    <input value="female" class="form__input--radio" type="radio" name="gender" required="">
+                    <label class="block__text" for="Gender">Female</label>
+                    <input value="male" class="form__input--radio" type="radio" name="gender" required="">
+                    <label class="block__text" for="Gender">Male</label>
+                </div>
+
+                <div class="form__message" id="error-message">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out the form correctly
+                    </p>
+                </div>
+
+                <button onclick="m.validateForm()" type="button" href="#" class="btn btn--large btn--accent">Add
+                    card</button>
+            </form>
+
+            <picture data-aos="fade-left">
+                <source type="image/webp" srcset="/add-cards.01995dc2.webp 1x,/add-cards@2x.93d5ea62.webp 2x">
+                <source type="image/png" srcset="/add-cards.c5cb41ca.png 1x,/add-cards@2x.4f59d0dc.png 2x">
+                <img class="skewed__img" src="/add-cards.c5cb41ca.png" alt="Cell phone image">
+            </picture>
+
+
+        </div>
+    </section>
+
+    <section id="my-cards" class="block block--cards">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--primary text--center">My cards</h2>
+            <hr data-aos="zoom-in" class="line line--title line--primary">
+        </header>
+
+        <div id="cards-container" class="cards grid grid--1x2--large">
+        </div>
+
+
+    </section>
+
+    <div id="btn-up" class="btn--up">
+        <img src="/chevron-right-solid.b008bb58.svg" alt="">
+    </div>
+
+
+    <footer class="footer block">
+
+        <picture>
+            <source type="image/webp" srcset="/Logo@2x.a9725390.webp 1x">
+            <img class="footer__image" src="/Logo@2x.ea6b721b.png" alt="SimplyCards logo">
+        </picture>
+
+        <p class="footer__copy text--white">Copyright &copy; 2021 SimplyCards</p>
+    </footer>
+
+
+
+
+    <script src="/script.9a675339.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+
+</html>
