@@ -140,9 +140,11 @@ h3 {
 .block {
   max-width: 1280px;
   margin: 0 auto;
+  overflow: hidden;
 }
 .block-fluid {
   width: 100%;
+  overflow: hidden;
 }
 
 .block--skewed {
@@ -693,4 +695,3 @@ h3 {
 /**********************************************/
 /*                  ANIMATIONS                 /
 /**********************************************/
-
