@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="fonts/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -104,18 +105,47 @@
         <div class="grid grid--1x2">
             <form data-aos="fade-right" class="form" action="">
                 <p class="block__text text--center">Contact information</p>
-                <input class="form__input" type="text" placeholder="Name" name="Name">
-                <input class="form__input" type="text" placeholder="Lastame" name="Lastname">
-                <input class="form__input" type="email" placeholder="Email" name="Email">
-                <input class="form__input" type="text" placeholder="Cell phone number" name="Phone">
+                <div id="group__name" class="form__group-input">
+                    <input id="name" class="form__input" type="text" placeholder="Name" name="name" required>
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-name">
+                    <p class="form__input-error">The name can only contain alphabetic characters.</p>
+                </div>
+                <div id="group__lastname" class="form__group-input">
+                    <input id="lastname" class="form__input" type="text" placeholder="Lastame" name="lastname" required>
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-lastname"">
+                    <p class="form__input-error">The lastname can only contain alphabetic characters.</p>
+                </div>
+                <div id="group__email" class="form__group-input">
+                    <input id="email" class="form__input" type="email" placeholder="Email" name="email" required>
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-email">
+                    <p class="form__input-error">The email addressis not valid.</p>
+                </div>
+                <div id="group__phone" class="form__group-input">
+                    <input id="phone" class="form__input" type="text" placeholder="Cell phone number" name="phone" required>
+                    <i class="form__validation-state fas fa-times-circle"></i>
+                </div>
+                <div id="error-phone">
+                    <p class="form__input-error">The cell phone number is not valid.</p>
+                </div>
                 <div class="form__group text--center">
-                    <input class="form__input--radio" type="radio" name="Gender">
+                    <input class="form__input--radio" type="radio" name="gender" required>
                     <label class="block__text" for="Gender">Female</label>
-                    <input class="form__input--radio" type="radio" name="Gender">
+                    <input class="form__input--radio" type="radio" name="Gender" required>
                     <label class="block__text" for="Gender">Male</label>
                 </div>
 
-                <a href="#" class="btn btn--large btn--accent">Add card</a>
+                <div class="form__message" id="error-message">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out the form correctly
+                    </p>
+                </div>
+
+                <button onclick="m.validateForm()" type="button" href="#" class="btn btn--large btn--accent">Add card</button>
             </form>
 
             <picture data-aos="fade-left">
