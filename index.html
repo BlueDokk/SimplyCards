@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplyCards</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar__brand" href="/"><img src="images/logo.png" alt="SimplyCards logo" /></a>
+            <div class="icon navbar__toggler">
+                <img src="./images/bars-solid.svg" alt="" class=>
+            </div>
+            <ul class="list navbar__list collapsible__content">
+                <li class="navbar__item"><a href="#">Home</a></li>
+                <li class="navbar__item"><a href="#">Services</a></li>
+                <li class="navbar__item"><a href="#">About us</a></li>
+                <li class="navbar__item"><a href="#">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="block--fluid banner">
+        <header>
+            <p class="animate__animated animate__lightSpeedInRight banner__header text--absolute text--white">Welcome
+            </p>
+            <hr class="animate__animated animate__lightSpeedInRight line banner__line text--white">
+            <h1 class="animate__animated animate__flip banner__title text--absolute text--white">MANAGE <br>CONTACTS
+            </h1>
+            <p class="animate__animated animate__lightSpeedInLeft banner__subtitle text--absolute text--white">ON MOBILE
+                AND WEB</p>
+        </header>
+        <img src="./images/banner.jpg" alt="banner image">
+    </section>
+    <section>
+        <a href="#" class="btn btn--absolute btn--small btn--primary">Get Started</a>
+    </section>
+
+    <section class="block">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--primary text--center">What is it?</h2>
+            <hr data-aos="zoom-in" class="line line--title line--primary">
+        </header>
+
+        <div class="grid grid--1x2">
+
+            <p data-aos="fade-right" class="block__text text--white text--center">Lorem Ipsum es simplemente el
+                texto de relleno de las imprentas
+                y archivos de texto. Lorem Ipsum
+                ha sido el texto de relleno
+                estándar de las industrias desde.
+                Lorem Ipsum es simplemente el
+                texto de relleno de las imprentas
+                y archivos de texto. Lorem Ipsum
+                ha sido el texto de relleno
+                estándar de las industrias desde</p>
+
+            <img data-aos="fade-left" class="block__image" src="./images/contacts.png" alt="">
+
+        </div>
+
+    </section>
+
+    <section class="block block--skewed">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--dark text--center">ADD<br> CONTACTS</h2>
+            <hr data-aos="zoom-in" class="line line--title line--dark">
+        </header>
+
+        <div class="grid grid--1x2">
+            <form data-aos="fade-right" class="form" action="">
+                <p class="block__text text--center">Contact information</p>
+                <input class="form__input" type="text" placeholder="Name" name="Name">
+                <input class="form__input" type="text" placeholder="Lastame" name="Lastname">
+                <input class="form__input" type="email" placeholder="Email" name="Email">
+                <input class="form__input" type="text" placeholder="Cell phone number" name="Phone">
+                <div class="form__group text--center">
+                    <input class="form__input--radio" type="radio" name="Gender">
+                    <label class="block__text" for="Gender">Female</label>
+                    <input class="form__input--radio" type="radio" name="Gender">
+                    <label class="block__text" for="Gender">Male</label>
+                </div>
+
+                <a href="#" class="btn btn--large btn--accent">Add card</a>
+            </form>
+            <img data-aos="fade-left" class="skewed__img" src="./images/add-cards.jpg" alt="Cell phone image">
+        </div>
+    </section>
+
+    <section class="block block--cards">
+        <header>
+            <h2 data-aos="zoom-in" class="block__title text--primary text--center">My cards</h2>
+            <hr data-aos="zoom-in" class="line line--title line--primary">
+        </header>
+
+        <div class="cards grid grid--1x2--large">
+            <div class="card grid grid--1x2" data-aos="zoom-in">
+                <div class="card__image">
+                    <img src="./images/icon-male.svg" alt="Icon male">
+                </div>
+                <div class="card__body">
+                    <h3>Jhon Smith</h3>
+                    <p>jhonsmith@gmail.com</p>
+                    <p>313 555 5555</p>
+                    <a href="#" class="btn btn--large btn--accent">Remove card</a>
+                </div>
+            </div>
+            <div class="card grid grid--1x2" data-aos="zoom-in">
+                <div class="card__image">
+                    <img src="./images/icon-female.svg" alt="Icon male">
+                </div>
+                <div class="card__body">
+                    <h3>Jane Smith</h3>
+                    <p>janesmith@gmail.com</p>
+                    <p>313 555 5555</p>
+                    <a href="#" class="btn btn--large btn--accent">Remove card</a>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <div id="btn-up" class="btn--up">
+        <img src="./images/chevron-right-solid.svg" alt="">
+    </div>
+
+
+    <footer class="footer block">
+        <img class="footer__image" src="./images/Logo.png" alt="SimplyCards logo">
+        <p class="footer__copy text--white">Copyright &copy; 2021 SimplyCards</p>
+    </footer>
+
+
+
+
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
