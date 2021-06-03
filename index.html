@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimplyCards</title>
 
+    <meta name="author" content="Javier Velasquez">
+    <meta name="description" content="Website of SimplyCards project">
+    <meta property="og:title" content="SimplyCards">
+    <meta property="og:description" content="Website of SimplyCards project">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +26,13 @@
 <body>
     <header>
         <nav class="navbar">
-            <a class="navbar__brand" href="/"><img src="images/logo.png" alt="SimplyCards logo" /></a>
+            <a class="navbar__brand" href="/">
+                <picture>
+                    <source type="image/webp" srcset="./images/logo.webp 1x, ./images/logo@2x.webp 2x" />
+                    <source type="image/png" srcset="./images/logo.png 1x, ./images/logo@2x.png 2x" />
+                    <img src="./images/logo.png" alt="SimplyCards lodo" />
+                </picture>
+            </a>
             <div class="icon navbar__toggler">
                 <img src="./images/bars-solid.svg" alt="" class=>
             </div>
@@ -43,7 +55,12 @@
             <p class="animate__animated animate__lightSpeedInLeft banner__subtitle text--absolute text--white">ON MOBILE
                 AND WEB</p>
         </header>
-        <img src="./images/banner.jpg" alt="banner image">
+
+        <picture>
+            <source type="image/webp" srcset="./images/banner.webp 1x" />
+            <img src="./images/banner.jpg" alt="banner image" />
+        </picture>
+
     </section>
     <section>
         <a href="#" class="btn btn--absolute btn--small btn--primary">Get Started</a>
@@ -68,7 +85,11 @@
                 ha sido el texto de relleno
                 estándar de las industrias desde</p>
 
-            <img data-aos="fade-left" class="block__image" src="./images/contacts.png" alt="">
+            <picture data-aos="fade-left">
+                <source type="image/webp" srcset="./images/contacts.webp 1x, ./images/contacts@2x.webp 2x" />
+                <source type="image/png" srcset="./images/contacts.png 1x, ./images/contacts@2x.png 2x" />
+                <img class="block__image" src="./images/contacts.png" alt="SimplyCards lodo" />
+            </picture>
 
         </div>
 
@@ -96,7 +117,14 @@
 
                 <a href="#" class="btn btn--large btn--accent">Add card</a>
             </form>
-            <img data-aos="fade-left" class="skewed__img" src="./images/add-cards.jpg" alt="Cell phone image">
+
+            <picture data-aos="fade-left">
+                <source type="image/webp" srcset="./images/add-cards.webp 1x, ./images/add-cards@2x.webp 2x" />
+                <source type="image/png" srcset="./images/add-cards.png 1x, ./images/add-cards@2x.png 2x" />
+                <img class="skewed__img" src="./images/add-cards.png" alt="Cell phone image" />
+            </picture>
+
+
         </div>
     </section>
 
