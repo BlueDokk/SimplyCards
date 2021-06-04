@@ -166,6 +166,7 @@ h3 {
 .block__image {
   padding: 0 4rem;
   margin-bottom: 8rem;
+  width: 100%;
 }
 
 .skewed__img {
@@ -465,6 +466,10 @@ h3 {
   border: 2px solid #fff;
   border-radius: 0.5rem;
   padding: 0.5rem;
+}
+
+.navbar__toggler img {
+  width: 2.6rem;
 }
 
 .navbar__toggler:hover,
