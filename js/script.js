@@ -6,6 +6,7 @@ var p = {
     cardsContainer: document.getElementById('cards-container'),
     form: document.getElementById('contact-form'),
     myCardsSection: document.getElementById('my-cards'),
+    btnAddCard: document.getElementById('add-card'),
     fields: [],
     expressions: {
         name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
@@ -22,6 +23,8 @@ var m = {
         m.scroll();
         m.readFields();
         document.getElementById("btn-up").addEventListener("click", m.scrollUp);
+
+        p.btnAddCard.addEventListener('click', m.validateForm);
 
     },
 
