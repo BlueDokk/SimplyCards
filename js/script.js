@@ -1,16 +1,23 @@
-var cardsSection = {
+// PROPERTIES AND METHODS OF CARD SECTION (ADD CONTACT)
+const cardsSection = {
 
     cardsContainer: document.getElementById('cards-container'),
     form: document.getElementById('contact-form'),
     myCardsSection: document.getElementById('my-cards'),
     btnAddCard: document.getElementById('add-card'),
+
+    // Array with validation results. 
     fields: [],
+
+    // Regular expressions for validate fields in the form.
     expressions: {
         name: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
         lastname: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
         email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
         phone: /^[0-9]{5,15}$/
     },
+
+    // Contact information validated.
     contact: {
         name: "",
         lastname: "",
@@ -21,15 +28,18 @@ var cardsSection = {
         id: ""
     },
 
-    startCards(){
+    startCards() {
 
+        // Initialize reading fields in the form.
         this.readFields();
-        this.btnAddCard.addEventListener('click', this.validateForm);
 
+        // Add submit function on button.
+        this.btnAddCard.addEventListener('click', this.validateForm);
     },
 
     validateField(expresion, input, field) {
 
+        // Get elements of input groups.
         let formGroup = document.getElementById(`group__${field}`);
         let formIcon = document.querySelector(`#group__${field} i`);
         let formMessage = document.querySelector(`#error-${field} p`);
@@ -39,20 +49,25 @@ var cardsSection = {
 
             if (expresion.test(input.value)) {
 
+                // Add class correct on input group.
                 formGroup.classList.remove('form__group-incorrect');
                 formGroup.classList.add('form__group-correct');
                 formIcon.classList.remove('fa-times-circle');
                 formIcon.classList.add('fa-check-circle');
                 formMessage.classList.remove('form__input-error-active');
 
+                // Add validation result.
                 this.fields[field] = true;
 
+                // Show or hidden error message.
                 if (Object.values(this.fields).includes(false)) {
                     errorMessage.style.display = 'block';
                 } else {
                     errorMessage.style.display = 'none';
                 }
             } else {
+
+                // Add class incorrect on input group.
                 formGroup.classList.add('form__group-incorrect');
                 formGroup.classList.remove('form__group-correct');
                 formIcon.classList.add('fa-times-circle');
@@ -66,6 +81,7 @@ var cardsSection = {
 
     validateFields(e) {
 
+        // Custom validation for each field.
         switch (e.target.id) {
             case 'name':
                 cardsSection.validateField(cardsSection.expressions.name, e.target, e.target.id);
@@ -86,6 +102,7 @@ var cardsSection = {
 
         let gender = document.contactForm.gender.value;
 
+        // Validation of field results.
         if (Object.keys(cardsSection.fields).length == 4) {
             if (cardsSection.fields.name && cardsSection.fields.lastname && cardsSection.fields.email && cardsSection.fields.phone && gender) {
                 cardsSection.getInputs();
@@ -106,6 +123,8 @@ var cardsSection = {
     },
 
     readFields() {
+
+        // Constant reading of fields.
         let inputs = document.querySelectorAll('.form__input');
 
         inputs.forEach(input => {
@@ -118,6 +137,7 @@ var cardsSection = {
 
         let formInputsGroup = document.querySelectorAll('.form__group-input');
 
+        // Check out correct or incorrect styles.
         formInputsGroup.forEach((group) => {
             group.classList.remove('form__group-incorrect');
             group.classList.remove('form__group-correct');
@@ -127,6 +147,7 @@ var cardsSection = {
 
     },
 
+    // Get and save contact information validated.
     getInputs() {
         this.contact.name = document.getElementById('name').value;
         this.contact.lastname = document.getElementById('lastname').value;
@@ -144,7 +165,9 @@ var cardsSection = {
 
     },
 
+    // Add card element into the DOM.
     addCard() {
+
         this.cardsContainer.innerHTML += `<div id="${this.contact.id}" class="card grid grid--1x2" data-aos="zoom-in">
         <div class="card__image">
             <img src="${this.contact.image}" alt="Icon male">
@@ -158,6 +181,7 @@ var cardsSection = {
     </div>`
     },
 
+    // Add remove card function on button.
     addFunctionRemoveCard() {
         let btnRemove = document.querySelectorAll('.card .btn');
         btnRemove.forEach((buttonRemove) => {
@@ -171,7 +195,8 @@ var cardsSection = {
 
 }
 
-var p = {
+// GENERAL PROPERTIES AND METHODS
+const p = {
 
     btnToggler: document.querySelector('.navbar__toggler'),
     navbar: document.querySelector('.navbar'),
@@ -179,13 +204,12 @@ var p = {
 
 }
 
-var m = {
+const m = {
 
     startApp: () => {
         m.collapseMenu(p.btnToggler, p.navbar);
         m.scroll();
         document.getElementById("btn-up").addEventListener("click", m.scrollUp);;
-
     },
 
     collapseMenu: (element, target) => {
@@ -194,16 +218,19 @@ var m = {
         })
     },
 
+    // Function to scroll to the top of the page
     scrollUp: () => {
-        var currentScroll = document.documentElement.scrollTop;
+        const currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > 0) {
             window.requestAnimationFrame(m.scrollUp);
             window.scrollTo(0, currentScroll - (currentScroll / 10));
         }
     },
+
+    // Show or hidden styles of Up button.
     scroll: () => {
-        var scroll = document.documentElement.scrollTop;
+        const scroll = document.documentElement.scrollTop;
         if (p.btnUp != null) {
             if (scroll > 100) {
                 p.btnUp.style.transform = 'scale(1)';
@@ -214,6 +241,7 @@ var m = {
     }
 }
 
+// Initialize methods
 m.startApp();
 cardsSection.startCards();
 window.onscroll = m.scroll;
